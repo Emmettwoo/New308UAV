@@ -1,3 +1,10 @@
 # Generate Folder
 gen/*
 bin/*
+
+＃Eclipse Files
+.settings/*
+.classpath
+.project
+proguard-project
+project.properties
