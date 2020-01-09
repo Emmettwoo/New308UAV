@@ -16,7 +16,6 @@ public class ControlButtons {
 		this.directionChangeButtonListener();
 	}
 	
-	        	Demo308UAV.dataController.setStepOver(5);
 	private void directionChangeButtonListener() {
 		Button button56up = (Button)ControlPage.self.findViewById(R.id.button56up);
 		button56up.setOnClickListener(new View.OnClickListener() {
@@ -83,7 +82,8 @@ public class ControlButtons {
 	    		if(ControlPage.speedController.getSpeed()==1000) {
 	    			ToastUtils.showToast("速度已达最大值");
 	    		}
-	    		ControlPage.textViewUtils.updateSeekBarText();
+	    		ControlPage.seekBarUtils.updateSeekBar();
+	    		
 	        }
 	    });
 		
@@ -95,7 +95,7 @@ public class ControlButtons {
 	    		if(ControlPage.speedController.getSpeed()==0) {
 	    			ToastUtils.showToast("速度已达最小值");
 	    		}
-	    		ControlPage.textViewUtils.updateSeekBarText();
+	    		ControlPage.seekBarUtils.updateSeekBar();
 	        }
 	    });	
 	}
@@ -123,6 +123,7 @@ public class ControlButtons {
 	    		} else {
 	    			//设置 循环启动条件 为真
 	    			ControlPage.stillBoost = true;
+	    			ControlPage.seekBarUtils.updateSeekBar();
 	    			Thread t = new Thread(new ClientSendData());
 	    			t.start();
 	    		}
@@ -139,7 +140,7 @@ public class ControlButtons {
 	        	
 	        	//设置 循环启动条件 为假
 	        	ControlPage.stillBoost = false;
-	        	
+	        	ControlPage.seekBarUtils.updateSeekBar();
 	        	ToastUtils.showToast("正在停止运行");
 	        	
 	        	//关闭连接隧道并置空socket（若存在）

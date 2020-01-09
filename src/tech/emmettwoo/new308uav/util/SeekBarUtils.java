@@ -6,10 +6,11 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
 public class SeekBarUtils {
-	
+	private SeekBar seekBar = null;
 	public void initSeekBar() {
-    	SeekBar seekBar = (SeekBar) ControlPage.self.findViewById(R.id.speedSeekBar);
+    	seekBar = (SeekBar) ControlPage.self.findViewById(R.id.speedSeekBar);
     	seekBar.setMax(1000);
+    	ControlPage.seekBarUtils.updateSeekBar();
     	
     	seekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
     		@Override
@@ -30,4 +31,9 @@ public class SeekBarUtils {
     		}
     	});
     }
+	
+	public void updateSeekBar() {
+		seekBar.setProgress(ControlPage.speedController.getSpeed());
+		ControlPage.textViewUtils.updateSeekBarText();
+	}
 }
