@@ -9,13 +9,115 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="tech.emmettwoo.new308uav.ControlPage" >
 
+        <Button
+        android:id="@+id/btnWelcome"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="" 
+        android:background="@drawable/goback" />
+    
     <Button
-        android:id="@+id/btnSetting"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/btnConnect"
+        android:layout_width="105dp"
+        android:layout_height="40dp"
         android:layout_alignParentRight="true"
-        android:background="@drawable/setting" />
+        android:layout_alignParentTop="true"
+        android:background="@drawable/first"
+        android:text="LINK" />
+    
+    <Button
+        android:id="@+id/btnBoost"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_above="@+id/button56down"
+        android:layout_toRightOf="@+id/button56down"
+        android:background="@drawable/start" />
+    
+    <Button
+        android:id="@+id/btnShutdown"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/button56down"
+        android:layout_toLeftOf="@+id/button56up"
+        android:background="@drawable/stop" />
+
+    <Button
+        android:id="@+id/btnSpeedUp"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_alignBottom="@+id/btnSetting"
+        android:layout_toRightOf="@+id/speedSeekBar"
+        android:background="@drawable/speedup" />
+    
+    <Button
+        android:id="@+id/btnSpeedDown"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_alignBottom="@+id/speedSeekBarText"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@+id/speedSeekBar"
+        android:background="@drawable/speeddown" />
+    
+     <Button
+        android:id="@+id/button56up"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+         android:layout_alignParentRight="true"
+		android:layout_centerVertical="true"
+        android:background="@drawable/anticlockwise" />
+    
+    <Button
+        android:id="@+id/button56down"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_alignBottom="@+id/button56up"
+        android:layout_toLeftOf="@+id/btnShutdown"
+        android:layout_centerVertical="true"
+        android:background="@drawable/clockwise" />
+
+    <Button
+        android:id="@+id/button78up"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_alignParentLeft="true"
+		android:layout_centerVertical="true"
+        android:background="@drawable/directionb" />
+
+    <Button
+        android:id="@+id/button78down"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_alignBottom="@+id/button78up"
+        android:layout_toRightOf="@+id/button90down"
+        android:layout_centerVertical="true"
+        android:background="@drawable/directionc" />
+
+    <Button
+        android:id="@+id/button90up"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_above="@+id/button78down"
+        android:layout_toRightOf="@+id/button78up"
+        android:background="@drawable/direction" />
+
+    <Button
+        android:id="@+id/button90down"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_alignLeft="@+id/button90up"
+        android:layout_below="@+id/button78down"
+        android:background="@drawable/directiona" />
+    
+    <SeekBar
+        android:id="@+id/speedSeekBar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnSpeedUp"
+        android:layout_centerHorizontal="true"
+        android:progressDrawable="@drawable/jindu"
+        android:thumb="@drawable/jindudian" />
     
     <TextView
         android:id="@+id/speedSeekBarText"
@@ -25,106 +127,14 @@
         android:layout_centerHorizontal="true"
         android:text="@string/uav_uninit_value"
         android:textColor="#000000" />
-
-    <Button
-        android:id="@+id/btnConnect"
-        android:layout_width="105dp"
-        android:layout_height="40dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/first"
-        android:text="LINK" />
-
-    <Button
-        android:id="@+id/button78up"
-        android:layout_width="38dp"
-        android:layout_height="38dp"
-        android:layout_alignTop="@+id/button56down"
-        android:layout_toLeftOf="@+id/button90down"
-        android:background="@drawable/directionb" />
-
-    <Button
-        android:id="@+id/button78down"
-        android:layout_width="38dp"
-        android:layout_height="38dp"
-        android:layout_alignBaseline="@+id/button78up"
-        android:layout_alignBottom="@+id/button78up"
-        android:layout_toLeftOf="@+id/speedSeekBar"
-        android:background="@drawable/directionc" />
-
-    <Button
-        android:id="@+id/button90up"
-        android:layout_width="38dp"
-        android:layout_height="38dp"
-        android:layout_above="@+id/button78up"
-        android:layout_toRightOf="@+id/button78up"
-        android:background="@drawable/direction" />
-
-    <Button
-        android:id="@+id/button56down"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
-        android:layout_alignBaseline="@+id/button56up"
-        android:layout_alignBottom="@+id/button56up"
-        android:layout_toLeftOf="@+id/btnShutdown"
-        android:background="@drawable/clockwise" />
-
-    <Button
-        android:id="@+id/button90down"
-        android:layout_width="38dp"
-        android:layout_height="38dp"
-        android:layout_below="@+id/button56down"
-        android:layout_toLeftOf="@+id/btnSpeedDown"
-        android:background="@drawable/directiona" />
-
-    <SeekBar
-        android:id="@+id/speedSeekBar"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/btnSpeedUp"
-        android:layout_centerHorizontal="true"
-        android:progressDrawable="@drawable/jindu"
-        android:thumb="@drawable/jindudian" />
-
-    <Button
-        android:id="@+id/btnSpeedDown"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignRight="@+id/button78down"
-        android:layout_alignTop="@+id/speedSeekBar"
-        android:background="@drawable/speeddown" />
-
-    <Button
-        android:id="@+id/btnSpeedUp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignBottom="@+id/btnSetting"
-        android:layout_toRightOf="@+id/speedSeekBar"
-        android:background="@drawable/speedup" />
-
-    <Button
-        android:id="@+id/button56up"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
-        android:layout_above="@+id/btnSpeedUp"
-        android:layout_alignRight="@+id/btnSetting"
-        android:layout_marginBottom="47dp"
-        android:background="@drawable/anticlockwise" />
-
-    <Button
-        android:id="@+id/btnShutdown"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
-        android:layout_alignBottom="@+id/button90down"
-        android:layout_toLeftOf="@+id/button56up"
-        android:background="@drawable/stop" />
-
-    <Button
-        android:id="@+id/btnBoost"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
-        android:layout_above="@+id/button56up"
-        android:layout_toLeftOf="@+id/button56up"
-        android:background="@drawable/start" />
     
+    <Button
+        android:id="@+id/btnSetting"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/setting" />
+
 </RelativeLayout>
+

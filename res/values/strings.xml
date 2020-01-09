@@ -8,6 +8,6 @@
     <string name="FirstPage">首页</string>
     <string name="title_activity_setting">SettingActivity</string>
     <string name="title_activity_about">AboutActivity</string>
-    <string name="uav_uninit_value">200 + 1500 + 1500 + 1500</string>
+    <string name="uav_uninit_value">未初始化</string>
 
 </resources>

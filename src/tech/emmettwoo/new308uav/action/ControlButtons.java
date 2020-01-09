@@ -2,11 +2,9 @@ package tech.emmettwoo.new308uav.action;
 
 import tech.emmettwoo.new308uav.ControlPage;
 import tech.emmettwoo.new308uav.R;
-import tech.emmettwoo.new308uav.SettingPage;
 import tech.emmettwoo.new308uav.runnable.ClientConnect;
 import tech.emmettwoo.new308uav.runnable.ClientSendData;
 import tech.emmettwoo.new308uav.util.ToastUtils;
-import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,39 +14,9 @@ public class ControlButtons {
 		this.powerChangeButtonListener();
 		this.speedChangeButtonListener();
 		this.directionChangeButtonListener();
-		this.stepOverChangeButtonListener();
-		this.dataSaveButtonListener();
-		this.pageChangeButtonListener();
 	}
 	
-	private void stepOverChangeButtonListener() {
-		/*
-		Button stepOver5 = (Button)Demo308UAV.self.findViewById(R.id.stepOver5);
-		stepOver5.setOnClickListener(new View.OnClickListener() {
-	        @Override
-	        public void onClick(View v) {
 	        	Demo308UAV.dataController.setStepOver(5);
-	        }
-	    });
-	    
-		Button stepOver10 = (Button)Demo308UAV.self.findViewById(R.id.stepOver10);
-		stepOver10.setOnClickListener(new View.OnClickListener() {
-	        @Override
-	        public void onClick(View v) {
-	        	Demo308UAV.dataController.setStepOver(10);
-	        }
-	    });
-		
-		Button stepOver25 = (Button)Demo308UAV.self.findViewById(R.id.stepOver25);
-		stepOver25.setOnClickListener(new View.OnClickListener() {
-	        @Override
-	        public void onClick(View v) {
-	        	Demo308UAV.dataController.setStepOver(25);
-	        }
-	    });
-	    */
-	}
-
 	private void directionChangeButtonListener() {
 		Button button56up = (Button)ControlPage.self.findViewById(R.id.button56up);
 		button56up.setOnClickListener(new View.OnClickListener() {
@@ -185,27 +153,5 @@ public class ControlButtons {
 	    		}*/
 	        }
 	    });
-	}
-
-	private void dataSaveButtonListener() {
-		/*
-		Button saveData = (Button)Demo308UAV.self.findViewById(R.id.saveData);
-		saveData.setOnClickListener(new View.OnClickListener() {
-	        @Override
-	        public void onClick(View v) {
-	        	Demo308UAV.dataController.directionDataSave();
-	        }
-	    });
-	    */
-	}
-	
-	private void pageChangeButtonListener() {
-		Button btnSetting = (Button) ControlPage.self.findViewById(R.id.btnSetting);
-		btnSetting.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				Intent i = new Intent(ControlPage.self, SettingPage.class); 	
-				ControlPage.self.startActivity(i); 
-			}
-		});
 	}
 }

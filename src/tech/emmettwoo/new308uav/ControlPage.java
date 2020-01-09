@@ -10,9 +10,12 @@ import tech.emmettwoo.new308uav.util.SeekBarUtils;
 import tech.emmettwoo.new308uav.util.TextViewUtils;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class ControlPage extends Activity{
 	public static Activity self = null;
@@ -21,6 +24,7 @@ public class ControlPage extends Activity{
 	public static TextViewUtils textViewUtils = new TextViewUtils();
 	public static SeekBarUtils seekBarUtils = new SeekBarUtils();
 	public static boolean stillBoost = false;
+	private static boolean firstBoot = true;
 	public static Socket socket;
 	private ControlButtons controlButtons = new ControlButtons();
 	
@@ -29,9 +33,31 @@ public class ControlPage extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         self = this;
+        if(firstBoot){
+        	dataController.directionDataRead();
+        	firstBoot = false;
+        }else{
+        	ControlPage.textViewUtils.updateSeekBarText();
+        }
+		
         seekBarUtils.initSeekBar();
-        dataController.directionDataRead();
         controlButtons.ControlButtonListener();
+        
+        Button btnSetting = (Button) findViewById(R.id.btnSetting);
+		btnSetting.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				Intent i = new Intent(ControlPage.this, SettingPage.class); 	
+				startActivity(i); 
+			}
+		});
+		
+		Button btnWelcome = (Button) findViewById(R.id.btnWelcome);
+		btnWelcome.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				Intent i = new Intent(ControlPage.this, WelcomePage.class); 	
+				startActivity(i); 
+			}
+		});
     }
 	
 	@Override

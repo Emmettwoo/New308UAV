@@ -1,5 +1,6 @@
 package tech.emmettwoo.new308uav;
 
+import tech.emmettwoo.new308uav.util.ToastUtils;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,13 +10,10 @@ import android.view.View;
 import android.widget.Button;
 
 public class SettingPage extends Activity{
-	private int stepover_temp = 0;
-	
 	protected void onCreate(Bundle savedInstanceState)
 	{		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_setting);
-		stepover_temp = ControlPage.dataController.getStepOver();
 		
 		Button btnSetting = (Button) findViewById(R.id.btnSetting);
 		btnSetting.setOnClickListener(new View.OnClickListener() {
@@ -25,19 +23,36 @@ public class SettingPage extends Activity{
 			}
 		});
 		
-		Button saveStepOver = (Button) findViewById(R.id.saveStepOver);
-		saveStepOver.setOnClickListener(new View.OnClickListener() {
+		Button saveDirectionData = (Button) findViewById(R.id.saveDirectionData);
+		saveDirectionData.setOnClickListener(new View.OnClickListener() {
 	        @Override
 	        public void onClick(View v) {
-	        	ControlPage.dataController.setStepOver(stepover_temp);
+	        	ControlPage.dataController.directionDataSave();
+	        	ToastUtils.showToast("航向俯仰等参数已保存");
+	        	Intent i = new Intent(SettingPage.this , ControlPage.class); 	
+				startActivity(i);
 	        }
 	    });
 		
+		Button readDirectionData = (Button) findViewById(R.id.readDirectionData);
+		readDirectionData.setOnClickListener(new View.OnClickListener() {
+	        @Override
+	        public void onClick(View v) {
+	        	ControlPage.dataController.directionDataRead();
+	        	ToastUtils.showToast("航向俯仰等参数已读取");
+	        	Intent i = new Intent(SettingPage.this , ControlPage.class); 	
+				startActivity(i);
+	        }
+	    });
+
 		Button stepOver5 = (Button) findViewById(R.id.stepOver5);
 		stepOver5.setOnClickListener(new View.OnClickListener() {
 	        @Override
 	        public void onClick(View v) {
-	        	stepover_temp = 5;
+	        	ControlPage.dataController.setStepOver(5);
+	        	ToastUtils.showToast("步进已设置为5");
+	        	Intent i = new Intent(SettingPage.this , ControlPage.class); 	
+				startActivity(i);
 	        }
 	    });
 	    
@@ -45,7 +60,10 @@ public class SettingPage extends Activity{
 		stepOver10.setOnClickListener(new View.OnClickListener() {
 	        @Override
 	        public void onClick(View v) {
-	        	stepover_temp = 10;
+	        	ControlPage.dataController.setStepOver(10);
+	        	ToastUtils.showToast("步进已设置为10");
+	        	Intent i = new Intent(SettingPage.this , ControlPage.class); 	
+				startActivity(i);
 	        }
 	    });
 		
@@ -53,7 +71,10 @@ public class SettingPage extends Activity{
 		stepOver25.setOnClickListener(new View.OnClickListener() {
 	        @Override
 	        public void onClick(View v) {
-	        	stepover_temp = 25;
+	        	ControlPage.dataController.setStepOver(25);
+	        	ToastUtils.showToast("步进已设置为25");
+	        	Intent i = new Intent(SettingPage.this , ControlPage.class); 	
+				startActivity(i);
 	        }
 	    });
 		
@@ -61,10 +82,28 @@ public class SettingPage extends Activity{
 		stepOver50.setOnClickListener(new View.OnClickListener() {
 	        @Override
 	        public void onClick(View v) {
-	        	stepover_temp = 50;
+	        	ControlPage.dataController.setStepOver(50);
+	        	ToastUtils.showToast("步进已设置为50");
+	        	Intent i = new Intent(SettingPage.this , ControlPage.class); 	
+				startActivity(i);
 	        }
 	    });
 		
+		Button btnAutoUp = (Button) findViewById(R.id.btnAutoUp);
+		btnAutoUp.setOnClickListener(new View.OnClickListener() {
+	        @Override
+	        public void onClick(View v) {
+	        	ToastUtils.showToast("未实现的功能");
+	        }
+	    });
+		
+		Button btnAutoDown = (Button) findViewById(R.id.btnAutoDown);
+		btnAutoDown.setOnClickListener(new View.OnClickListener() {
+			@Override
+	        public void onClick(View v) {
+				ToastUtils.showToast("未实现的功能");
+	        }
+	    });
 	}
 
 	@Override
