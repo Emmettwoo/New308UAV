@@ -93,7 +93,7 @@ public class DataController {
     	editor.putInt("direction9", direction9);
     	
     	editor.commit();
-    	ToastUtils.showToast("保存成功");
+    	ToastUtils.showNewToast(ControlPage.self, "保存成功");
 	}
 	
 	public void directionDataRead() {

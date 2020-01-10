@@ -80,7 +80,7 @@ public class ControlButtons {
 	        public void onClick(View v) {
 	        	ControlPage.speedController.sppedUp();
 	    		if(ControlPage.speedController.getSpeed()==1000) {
-	    			ToastUtils.showToast("速度已达最大值");
+	    			ToastUtils.showExistToast(ControlPage.self, "速度已达最大值");
 	    		}
 	    		ControlPage.seekBarUtils.updateSeekBar();
 	    		
@@ -93,7 +93,7 @@ public class ControlButtons {
 	        public void onClick(View v) {
 	        	ControlPage.speedController.sppedDown();
 	    		if(ControlPage.speedController.getSpeed()==0) {
-	    			ToastUtils.showToast("速度已达最小值");
+	    			ToastUtils.showExistToast(ControlPage.self, "速度已达最小值");
 	    		}
 	    		ControlPage.seekBarUtils.updateSeekBar();
 	        }
@@ -107,7 +107,7 @@ public class ControlButtons {
 	        public void onClick(View v) {
 	        	Thread t = new Thread(new ClientConnect());
 	        	t.start();
-	        	ToastUtils.showToast("无人机快闪则连接成功");
+	        	ToastUtils.showNewToast(ControlPage.self, "无人机快闪则连接成功");
 	        }
 	    });
 		
@@ -117,9 +117,9 @@ public class ControlButtons {
 	        public void onClick(View v) {
 	        	//若无人机不在运行且已连接，将上面的设置发送以生效
 	    		if(ControlPage.stillBoost){
-	    			ToastUtils.showToast("已在运行中");
+	    			ToastUtils.showNewToast(ControlPage.self, "已在运行中");
 	    		} else if(ControlPage.socket==null) {
-	    			ToastUtils.showToast("未连接到无人机");
+	    			ToastUtils.showNewToast(ControlPage.self, "未连接到无人机");
 	    		} else {
 	    			//设置 循环启动条件 为真
 	    			ControlPage.stillBoost = true;
@@ -141,7 +141,7 @@ public class ControlButtons {
 	        	//设置 循环启动条件 为假
 	        	ControlPage.stillBoost = false;
 	        	ControlPage.seekBarUtils.updateSeekBar();
-	        	ToastUtils.showToast("正在停止运行");
+	        	ToastUtils.showNewToast(ControlPage.self, "正在停止运行");
 	        	
 	        	//关闭连接隧道并置空socket（若存在）
 	        	/*try {

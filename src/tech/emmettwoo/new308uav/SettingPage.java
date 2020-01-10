@@ -28,7 +28,7 @@ public class SettingPage extends Activity{
 	        @Override
 	        public void onClick(View v) {
 	        	ControlPage.dataController.directionDataSave();
-	        	ToastUtils.showToast("航向俯仰等参数已保存");
+	        	ToastUtils.showNewToast(SettingPage.this, "航向俯仰等参数已保存");
 	        	Intent i = new Intent(SettingPage.this , ControlPage.class); 	
 				startActivity(i);
 	        }
@@ -39,7 +39,7 @@ public class SettingPage extends Activity{
 	        @Override
 	        public void onClick(View v) {
 	        	ControlPage.dataController.directionDataRead();
-	        	ToastUtils.showToast("航向俯仰等参数已读取");
+	        	ToastUtils.showNewToast(SettingPage.this, "航向俯仰等参数已读取");
 	        	Intent i = new Intent(SettingPage.this , ControlPage.class); 	
 				startActivity(i);
 	        }
@@ -50,7 +50,7 @@ public class SettingPage extends Activity{
 	        @Override
 	        public void onClick(View v) {
 	        	ControlPage.dataController.setStepOver(5);
-	        	ToastUtils.showToast("步进已设置为5");
+	        	ToastUtils.showNewToast(SettingPage.this, "步进已设置为5");
 	        	Intent i = new Intent(SettingPage.this , ControlPage.class); 	
 				startActivity(i);
 	        }
@@ -61,7 +61,7 @@ public class SettingPage extends Activity{
 	        @Override
 	        public void onClick(View v) {
 	        	ControlPage.dataController.setStepOver(10);
-	        	ToastUtils.showToast("步进已设置为10");
+	        	ToastUtils.showNewToast(SettingPage.this, "步进已设置为10");
 	        	Intent i = new Intent(SettingPage.this , ControlPage.class); 	
 				startActivity(i);
 	        }
@@ -72,7 +72,7 @@ public class SettingPage extends Activity{
 	        @Override
 	        public void onClick(View v) {
 	        	ControlPage.dataController.setStepOver(25);
-	        	ToastUtils.showToast("步进已设置为25");
+	        	ToastUtils.showNewToast(SettingPage.this, "步进已设置为25");
 	        	Intent i = new Intent(SettingPage.this , ControlPage.class); 	
 				startActivity(i);
 	        }
@@ -83,7 +83,7 @@ public class SettingPage extends Activity{
 	        @Override
 	        public void onClick(View v) {
 	        	ControlPage.dataController.setStepOver(50);
-	        	ToastUtils.showToast("步进已设置为50");
+	        	ToastUtils.showNewToast(SettingPage.this, "步进已设置为50");
 	        	Intent i = new Intent(SettingPage.this , ControlPage.class); 	
 				startActivity(i);
 	        }
@@ -93,7 +93,7 @@ public class SettingPage extends Activity{
 		btnAutoUp.setOnClickListener(new View.OnClickListener() {
 	        @Override
 	        public void onClick(View v) {
-	        	ToastUtils.showToast("未实现的功能");
+	        	ToastUtils.showNewToast(SettingPage.this, "未实现的功能");
 	        }
 	    });
 		
@@ -101,7 +101,7 @@ public class SettingPage extends Activity{
 		btnAutoDown.setOnClickListener(new View.OnClickListener() {
 			@Override
 	        public void onClick(View v) {
-				ToastUtils.showToast("未实现的功能");
+				ToastUtils.showNewToast(SettingPage.this, "未实现的功能");
 	        }
 	    });
 	}

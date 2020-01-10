@@ -3,10 +3,11 @@ package tech.emmettwoo.new308uav.runnable;
 import tech.emmettwoo.new308uav.ControlPage;
 import tech.emmettwoo.new308uav.util.ToastUtils;
 
+//未实现的功能
 public class AutoFlyDown implements Runnable {
 	@Override
 	public void run() {
-    	ToastUtils.showToast("无人机自动降落");
+    	ToastUtils.showNewToast(ControlPage.self, "无人机自动降落");
 		for(int speed = ControlPage.speedController.getSpeed(); speed > 0; speed-=10){
 			ControlPage.speedController.setSpeed(speed);
 			ControlPage.textViewUtils.updateSeekBarText();
